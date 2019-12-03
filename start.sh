@@ -1,6 +1,5 @@
 #!/bin/bash
-CONFIG=/root/config.sh
-cp /tmp/config.sh $CONFIG
+CONFIG=/root/config/config.sh
 
 if [ -f $CONFIG ]; then
    chmod +x $CONFIG
@@ -8,6 +7,4 @@ if [ -f $CONFIG ]; then
    rm $CONFIG
 fi
 
-/usr/sbin/sshd -D &
-/usr/sbin/vsftpd /etc/vsftpd.conf &
-nginx -g "daemon off;"
+/usr/sbin/sshd -D
