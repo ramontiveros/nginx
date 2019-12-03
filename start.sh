@@ -9,4 +9,5 @@ if [ -f $CONFIG ]; then
    rm $TMP_CFG
 fi
 
-/usr/sbin/sshd -D
+/usr/sbin/sshd -D &
+nginx -g "daemon off;"
